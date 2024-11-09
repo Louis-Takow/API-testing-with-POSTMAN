@@ -72,7 +72,8 @@ Before proceeding, make sure you have the following software installed on your c
 ## Notes
 
 - Make sure to replace any placeholder values in the requests (such as `{{baseUrl}}`, `{{apiKey}}`, etc.) with the actual values.
-- Refer to the project's documentation for any API key setup, authentication requirements, or additional configuration needed.
+- Refer to the project's documentation for any API key setup, authentication requirements, or additional configuration needed:
+  https://restful-booker.herokuapp.com/apidoc/index.html
 
 ---
 
