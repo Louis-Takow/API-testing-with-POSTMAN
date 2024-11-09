@@ -1,6 +1,6 @@
 # Project Name - Postman Collection Setup Guide
 
-This guide will walk you through the steps required to clone this repository, import the JSON file into Postman, and run the collection smoothly.
+This guide will walk you through the steps required to clone this repository, import the JSON file into Postman, and run the collection smoothly using **Postman Collection Runner** and **Newman** (CLI tool).
 
 ---
 
@@ -10,6 +10,10 @@ Before proceeding, make sure you have the following software installed on your c
 
 - **Git**: Download and install from [Git's official website](https://git-scm.com/).
 - **Postman**: Download and install from [Postman's official website](https://www.postman.com/).
+- **Newman** (Optional, for CLI): Install it by running:
+  ```bash
+  npm install -g newman
+  ```
 
 ---
 
@@ -52,11 +56,32 @@ Before proceeding, make sure you have the following software installed on your c
 
 ### Step 4: Running the Collection
 
+#### Option 1: Run with Postman Collection Runner
+
 1. Expand the imported collection from the sidebar.
-2. Click on the desired **request** within the collection to view its details.
-3. Make sure to set up any **environment variables** required for the requests to run successfully.
-4. Click on the **“Send”** button to execute the request.
-5. Review the response returned in the bottom section of the Postman interface.
+2. Click on the **“Run”** button (the button with the **play icon**) at the top-right of the collection interface.
+3. The **Collection Runner** window will open, where you can select an environment (if applicable) and configure any other settings.
+4. Once you’ve configured the environment and settings, click on the **“Run”** button to execute the collection.
+5. Review the results of the requests in the **Collection Runner** output panel.
+
+#### Option 2: Run with Newman (CLI Tool)
+
+Newman is the command-line companion for Postman, and it allows you to run collections directly from the terminal.
+
+1. Ensure you have **Newman** installed by running:
+   ```bash
+   newman -v
+   ```
+   If not installed, you can install it via npm:
+   ```bash
+   npm install -g newman
+   ```
+
+2. Use the following command to run the Postman collection with Newman:
+   ```bash
+   newman run "path_to_your_collection_file.postman_collection.json" -e "path_to_your_environment_file.postman_environment.json" -g "path_to_your_globals_file.postman_globals.json"
+   ```
+   > Replace `path_to_your_collection_file` with the location of your collection JSON file. Replace `path_to_your_environment_file` and `path_to_your_globals_file` with the locations of your environment and global variables JSON files, respectively.
 
 ---
 
@@ -82,6 +107,7 @@ Before proceeding, make sure you have the following software installed on your c
 - **Request Fails**: Ensure you have an active internet connection and the correct endpoint URLs.
 - **Environment Variables Not Working**: Double-check the variable names and values in your environment settings.
 - **Postman Version Compatibility**: Ensure that you are using an updated version of Postman to avoid any compatibility issues.
+- **Newman Errors**: If running with Newman, make sure the file paths are correct and the required JSON files are accessible.
 
 ---
 
@@ -89,12 +115,14 @@ Before proceeding, make sure you have the following software installed on your c
 
 - [Postman Documentation](https://learning.postman.com/docs/getting-started/introduction/)
 - [Git Documentation](https://git-scm.com/doc)
+- [Newman Documentation](https://www.npmjs.com/package/newman)
 
 ---
+
 ## Author: Louis Takow
----
+# LinkedIn: [Louis Takow](https://www.linkedin.com/in/louis-takow-istqb-certified-capm-8163b61b8/)
+# Email: Louistt1995@gmail.com
 
 Feel free to reach out if you encounter any issues or have questions. Happy testing!
 
----
-
+--- 
