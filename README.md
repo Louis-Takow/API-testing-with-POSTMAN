@@ -90,6 +90,8 @@ Before proceeding, make sure you have the following software installed on your c
 - [Git Documentation](https://git-scm.com/doc)
 
 ---
+## Author: Louis Takow
+---
 
 Feel free to reach out if you encounter any issues or have questions. Happy testing!
 
