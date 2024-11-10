@@ -1,4 +1,4 @@
-# Project Name - Postman Collection Setup Guide
+# Project Name - Postman Collection Setup Guide for HEROKUAPP
 
 This guide will walk you through the steps required to clone this repository, import the JSON file into Postman, and run the collection smoothly using **Postman Collection Runner** and **Newman** (CLI tool).
 
@@ -48,9 +48,9 @@ Before proceeding, make sure you have the following software installed on your c
 
 1. Click on the **“Import”** button located at the top-left corner of the Postman interface.
 2. In the Import window, select the **“File”** tab.
-3. Click on **“Upload Files”** and navigate to the project folder where the JSON file is located.
+3. Click on **“Upload Files”** and navigate to the project folder where the JSON files are located.
 4. Select the JSON file and click **“Open”**.
-5. Once imported, you should see the collection appear in the sidebar of your Postman interface.
+5. Once imported, you should see the collection appear in the sidebar of your Postman interface. Repeat for enviroment and global variable JSON file.
 
 ---
 
@@ -85,6 +85,32 @@ Newman is the command-line companion for Postman, and it allows you to run colle
 
 ---
 
+## Test Scenarios
+
+### Creating a Booking
+- Sends a **POST** request to initiate a new booking.
+- Confirms that the response status is **200**.
+- Retrieves the `bookingid` from the response body and saves it to an environment variable.
+
+### Reading a Booking
+- Sends a **GET** request to fetch booking details using the stored booking ID.
+- Confirms that the response status is **200**.
+
+### Updating a Booking
+- Sends a **PUT** request to modify the booking details using the stored booking ID.
+- Confirms that the response status is **200**.
+
+### Partially Updating a Booking
+- Sends a **PATCH** request to partially modify the booking details using the stored booking ID.
+- Confirms that the response status is **200**.
+- Asserts the updated booking details.
+
+### Deleting a Booking
+- Sends a **DELETE** request to remove the booking using the stored booking ID.
+- Confirms that the response status is **201**.
+
+---
+
 ## Setting Up Environment Variables (If Applicable)
 
 1. If the collection uses environment variables, go to the **Environments** tab in Postman.
@@ -94,10 +120,17 @@ Newman is the command-line companion for Postman, and it allows you to run colle
 
 ---
 
+## Best Practices
+
+- **Validate Positive and Negative Path**: Test for valid, invalid, and unexpected conditions to ensure robustness.
+- **Data Management**: Separate test data from your script by creating a base-URL global variable and using environment variables for reusable and sensitive data. This practice helps maintain security and improves the flexibility of your tests.
+
+---
+
 ## Notes
 
 - Make sure to replace any placeholder values in the requests (such as `{{baseUrl}}`, `{{apiKey}}`, etc.) with the actual values.
-- Refer to the project's documentation for any API key setup, authentication requirements, or additional configuration needed:
+- Refer to the project's documentation for any API key setup, authentication requirements, or additional configuration needed:  
   https://restful-booker.herokuapp.com/apidoc/index.html
 
 ---
@@ -120,9 +153,11 @@ Newman is the command-line companion for Postman, and it allows you to run colle
 ---
 
 ## Author: Louis Takow
-# LinkedIn: [Louis Takow](https://www.linkedin.com/in/louis-takow-istqb-certified-capm-8163b61b8/)
-# Email: Louistt1995@gmail.com
+### LinkedIn: [Louis Takow](https://www.linkedin.com/in/louis-takow-istqb-certified-capm-8163b61b8/)
+### Email: Louistt1995@gmail.com
 
 Feel free to reach out if you encounter any issues or have questions. Happy testing!
 
 --- 
+
+This version now includes detailed test scenarios and best practices for your Postman collection.
